@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>代理模式 | Yanfzh&#39;s  Blog</title>
+  <title>操作系统 （上） | Yanfzh&#39;s  Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="模式的定义 定义：由于某些原因需要给某对象提供一个代理以控制对该对象的访问。这时，访问对象不适合或者不能直接引用目标对象，代理对象作为访问对象和目标对象之间的中介。">
+  <meta name="description" content="1. 概述1.1 基本特征 并发  并发指一段时间能同时运行多个程序，而并行指同一时刻可运行多个指令  操作系统引入进程、线程实现并发  共享  分为互斥共享和同时共享，互斥共享的资源称为临界资源，如打印机，同一时刻只允许一个进程访问，需同步机制实现互斥访问">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代理模式">
-<meta property="og:url" content="http://yoursite.com/2020/07/04/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="操作系统 （上）">
+<meta property="og:url" content="http://yoursite.com/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/index.html">
 <meta property="og:site_name" content="Yanfzh&#39;s  Blog">
-<meta property="og:description" content="模式的定义 定义：由于某些原因需要给某对象提供一个代理以控制对该对象的访问。这时，访问对象不适合或者不能直接引用目标对象，代理对象作为访问对象和目标对象之间的中介。">
+<meta property="og:description" content="1. 概述1.1 基本特征 并发  并发指一段时间能同时运行多个程序，而并行指同一时刻可运行多个指令  操作系统引入进程、线程实现并发  共享  分为互斥共享和同时共享，互斥共享的资源称为临界资源，如打印机，同一时刻只允许一个进程访问，需同步机制实现互斥访问">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/5.jpg">
-<meta property="og:image" content="http://yoursite.com/images/6.jpg">
-<meta property="article:published_time" content="2020-07-04T12:34:54.000Z">
-<meta property="article:modified_time" content="2020-07-06T13:39:57.759Z">
+<meta property="og:image" content="http://yoursite.com/images/26.jpg">
+<meta property="og:image" content="http://yoursite.com/images/27.jpg">
+<meta property="article:published_time" content="2020-08-04T05:21:49.000Z">
+<meta property="article:modified_time" content="2020-08-04T07:59:49.929Z">
 <meta property="article:author" content="Yanfzh">
-<meta property="article:tag" content="结构型模式">
+<meta property="article:tag" content="进程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/5.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/26.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yanfzh&#39;s  Blog" type="application/atom+xml">
   
@@ -172,7 +172,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-代理模式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-操作系统 (上)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
     
@@ -180,13 +180,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      代理模式
+      操作系统 （上）
     </h1>
   
 
         
-        <a href="/2020/07/04/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-07-04T12:34:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+        <a href="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/" class="archive-article-date">
+  	<time datetime="2020-08-04T05:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
 </a>
          <!-- 需要添加的位置 -->
           <!-- 开始添加字数统计-->
@@ -196,7 +196,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">468字</span>
+        <span class="post-count">2.7k字</span>
       </span>
     </span>
 
@@ -205,7 +205,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长 ≈ </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">9分</span>
       </span>
     </span>
 </div>
@@ -218,24 +218,151 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="模式的定义"><a href="#模式的定义" class="headerlink" title="模式的定义"></a>模式的定义</h3><ul>
-<li>定义：由于某些原因需要给某对象提供一个代理以控制对该对象的访问。这时，访问对象不适合或者不能直接引用目标对象，代理对象作为访问对象和目标对象之间的中介。<a id="more"></a>
-<h3 id="模式的结构图"><a href="#模式的结构图" class="headerlink" title="模式的结构图"></a>模式的结构图</h3><img src="/images/5.jpg" alt=""><h3 id="模式的实现"><a href="#模式的实现" class="headerlink" title="模式的实现"></a>模式的实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//抽象主题</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//真实主题</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RealSubject</span> <span class="keyword">implements</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"访问真实主题方法"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//代理</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> <span class="keyword">implements</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> RealSubject realSubject;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(realSubject==<span class="keyword">null</span>)&#123;</span><br><span class="line">            realSubject =<span class="keyword">new</span> RealSubject();</span><br><span class="line">        &#125;</span><br><span class="line">        preRequest();</span><br><span class="line">        realSubject.Request();</span><br><span class="line">        postRequest();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preRequest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"访问真实主题之前的预处理"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postRequest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"访问真实主题之后的后续处理"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Proxy proxy = <span class="keyword">new</span> Proxy();</span><br><span class="line">        proxy.Request();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="模式应用实例"><a href="#模式应用实例" class="headerlink" title="模式应用实例"></a>模式应用实例</h3>例：韶关“天街e角”公司是一家婺源特产公司的代理公司，用代理模式实现。<br>分析：韶关“天街e角”公司是婺源特产公司特产的代理，通过调用婺源特产公司的 <code>display()</code> 方法显示代理产品，当然它可以增加一些额外的处理，如包裝或加价等。客户可通过“天街e角”代理公司间接访问“婺源特产公司”的产品。<br>结构图如下：<br><img src="/images/6.jpg" alt=""><h3 id="模式的优缺点"><a href="#模式的优缺点" class="headerlink" title="模式的优缺点"></a>模式的优缺点</h3></li>
-<li>优点：</li>
+        <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><h4 id="1-1-基本特征"><a href="#1-1-基本特征" class="headerlink" title="1.1 基本特征"></a>1.1 基本特征</h4><ul>
+<li><p>并发<br>  并发指一段时间能同时运行多个程序，而并行指同一时刻可运行多个指令<br>  操作系统引入进程、线程实现并发</p>
+</li>
+<li><p>共享<br>  分为互斥共享和同时共享，互斥共享的资源称为临界资源，如打印机，同一时刻只允许一个进程访问，需同步机制实现互斥访问</p>
+</li>
 </ul>
-<ol>
-<li>代理模式在客户端与目标对象之间起到一个中介作用和保护目标对象的作用；</li>
-<li>代理对象可以扩展目标对象的功能；</li>
-<li>代理模式能将客户端与 目标对象分离在一定程度上降低了系统的耦合度。 </li>
-</ol>
+<a id="more"></a>
 <ul>
-<li>缺点：</li>
-</ul>
+<li><p>虚拟</p>
 <ol>
-<li>在客户端和目标对象增加一个代理对象,会造成请求处理速度变慢；</li>
-<li>增加了系统的复杂度。 </li>
+<li>时（时间）分复用技术： 多个进程可在同一处理器并发执行，进程轮流占用处理器</li>
+<li>空（空间）分复用技术： 应用于虚拟内存，它将物理内存抽象为地址空间，每个进程都有各自的地址空间。</li>
 </ol>
+</li>
+<li><p>异步<br>  进程不是一次性执行完毕，而是走走停停，以不可知速度向前进</p>
+</li>
+</ul>
+<h4 id="1-2-基本功能"><a href="#1-2-基本功能" class="headerlink" title="1.2 基本功能"></a>1.2 基本功能</h4><ul>
+<li>进程管理 ：进程控制、进程同步、进程通信、死锁处理、处理机调度等。</li>
+<li>内存管理 ：内存分配、地址映射、内存保护与共享、虚拟内存等。</li>
+<li>文件管理 ：文件存储空间的管理、目录管理、文件读写管理和保护等。</li>
+<li>设备管理 ：缓冲管理、设备分配、设备处理、虛拟设备等。完成I/O 请求，提高设备的利用率。</li>
+</ul>
+<h4 id="1-3-系统调用"><a href="#1-3-系统调用" class="headerlink" title="1.3 系统调用"></a>1.3 系统调用</h4><p>如果一个进程在用户态需要使用内核态的功能，就进行系统调用从而陷入内核，由操作系统代为完成。</p>
+<h4 id="1-4-大内核和微内核"><a href="#1-4-大内核和微内核" class="headerlink" title="1.4 大内核和微内核"></a>1.4 大内核和微内核</h4><ul>
+<li><p>大内核<br>  将操作系统功能作为一个紧密结合的整体放入内核<br>  由于各模块共享信息，因此有很高性能</p>
+</li>
+<li><p>微内核<br>  它是由一部分操作系统功能移出内核形成的，降低了内核的复杂性。<br>  在微内核结构下，操作系统被划分成小的、定义良好的模块，只有微内核这一个模块运行在内核态，其余模块运行在用户态。<br>  因为需要频繁地在用户态和核心态之间进行切换，所以会有一定的性能损失。</p>
+</li>
+</ul>
+<h4 id="1-5-中断分类"><a href="#1-5-中断分类" class="headerlink" title="1.5 中断分类"></a>1.5 中断分类</h4><ul>
+<li><p>外中断<br>  由 CPU 执行指令以外的事件引起，<br>  如 I/O 完成中断，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。</p>
+</li>
+<li><p>异常<br>  由 CPU 执行指令的内部事件引起，如非法操作码、地址越界、算术溢出等。</p>
+</li>
+<li><p>陷入<br>  在用户程序中使用系统调用。</p>
+</li>
+</ul>
+<h3 id="2-进程管理"><a href="#2-进程管理" class="headerlink" title="2. 进程管理"></a>2. 进程管理</h3><h4 id="2-1-进程与线程"><a href="#2-1-进程与线程" class="headerlink" title="2.1 进程与线程"></a>2.1 进程与线程</h4><ul>
+<li><p>进程<br>  进程是资源分配的基本单位。进程控制块 (Process Control Block, PCB) 描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 PCB 的操作。</p>
+</li>
+<li><p>线程<br>  线程是独立调度的基本单位。一个进程中可以有多个线程，它们共享进程资源。</p>
+</li>
+<li><p>区别</p>
+<ol>
+<li>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问隶属进程的资源。</li>
+<li>线程是独立调度的基本单位，在同一进程中，线程的切换不会引起进程切换，从一个进程中的线程切换到另一个进程中的线程时，会引起进程切换。</li>
+<li>创建或撤销进程所付出的开销远大于创建或撤销线程时的开销</li>
+<li>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要借助 IPC。</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-2-进程状态切换"><a href="#2-2-进程状态切换" class="headerlink" title="2.2 进程状态切换"></a>2.2 进程状态切换</h4><p><img src="/images/26.jpg" alt=""></p>
+<ul>
+<li>就绪状态 (ready) :等待被调度</li>
+<li>运行状态 (running)</li>
+<li>阻塞状态 (waiting) :等待资源</li>
+</ul>
+<p>tips：<br>    1. 只有就绪态和运行态可以相互转换，其它的都是单向转换。就绪状态的进程通过调度算法从而获得 CPU 时间，转为运行状态；而运行状态的进程，在分配给它的 CPU 时间片用完之后就会转为就绪状态，等待下一次调度。<br>    2. 阻塞状态是缺少需要的资源从而由运行状态转换而来，但是该资源不包括 CPU 时间，缺少 CPU 时间会从运行态转换为就绪态。</p>
+<h4 id="2-3-进程调度算法"><a href="#2-3-进程调度算法" class="headerlink" title="2.3 进程调度算法"></a>2.3 进程调度算法</h4><p>不同环境的调度算法目标不同</p>
+<h5 id="2-3-1-批处理系统"><a href="#2-3-1-批处理系统" class="headerlink" title="2.3.1 批处理系统"></a>2.3.1 批处理系统</h5><p>该系统中，调度算法目标是保证吞吐量和周转时间</p>
+<ul>
+<li><p>先来先服务 first-come first-serverd（FCFS）<br>  非抢占式的调度算法，按照请求的顺序进行调度。<br>  有利于长作业，但不利于短作业，因为短作业必须一直等待前面的长作业(执行时间长)执行完毕才能执行</p>
+</li>
+<li><p>短作业优先 shortest job first（SJF）<br>  非抢占式的调度算法，按估计运行时间最短的顺序进行调度。<br>  长作业有可能会饿死，处于一直等待短作业执行完毕的状态。</p>
+</li>
+<li><p>最短剩余时间优先 shortest remaining time next（SRTN）<br>  最短作业优先的抢占式版本，按剩余运行时间的顺序进行调度。</p>
+</li>
+</ul>
+<h5 id="2-3-2-交互式系统"><a href="#2-3-2-交互式系统" class="headerlink" title="2.3.2 交互式系统"></a>2.3.2 交互式系统</h5><p>有大量用户交互操作，系统中调度算法的目标是快速进行响应。</p>
+<ul>
+<li>时间片轮转<br>  将所有就绪进程按 FCFS 的原则排成一个队列，每次调度时，把 CPU 时间分配给队首进程，该进程可以执行一个时间片。当时间片用完时，由计时器发出时钟中断，调度程序便停止该进程的执行，并将它送往就绪队列的末尾，同时继续把 CPU 时间分配给队首的进程。</li>
+</ul>
+<p>时间片轮转算法的效率和时间片的大小有很大关系：<br>    1. 因进程切换要保存进程信息并且载入新进程信息，若时间片太小，进程切换频繁，就会花过多时间。<br>    2. 而如果时间片过长，无法保证实时性。</p>
+<ul>
+<li><p>优先级调度<br>  为每个进程分配一个优先级，按优先级进行调度。<br>  为了防止低优先级的进程永远等不到调度，可以随着时间的推移增加等待进程的优先级。</p>
+</li>
+<li><p>多级反馈队列</p>
+<ol>
+<li>多级队列是为需要连续执行多个时间片的进程考虑，它设置了多个队列，每个队列时间片大小都不同，例如 1,2,4,8,..。进程在第一个队列没执行完，就会被移到下一个队列。这种方式下，之前的进程只需要交换 7 次。</li>
+<li>每个队列优先权也不同，最上面的优先权最高。</li>
+<li>可以将这种调度算法看成是时间片轮转调度算法和优先级调度算法的结合。</li>
+</ol>
+</li>
+</ul>
+<h5 id="2-3-3-实时系统"><a href="#2-3-3-实时系统" class="headerlink" title="2.3.3 实时系统"></a>2.3.3 实时系统</h5><p>实时系统要求一个请求在一个确定时间内得到响应。<br>分为硬实时和软实时，前者必须满足绝对的截止时间，后者可以容忍一定的超时。</p>
+<h4 id="2-4-进程同步"><a href="#2-4-进程同步" class="headerlink" title="2.4 进程同步"></a>2.4 进程同步</h4><ul>
+<li><p>临界区 ：对临界资源进行访问的那段代码称为临界区。为了互斥访问临界资源，每个进程在进入临界区之前，需要先进行检查。</p>
+</li>
+<li><p>同步与互斥</p>
+<ol>
+<li>同步：多个进程因为合作产生的直接制约关系，使得进程有一定的先后执行关系。</li>
+<li>互斥：多个进程在同一时刻只有一个进程能进入临界区。</li>
+</ol>
+</li>
+<li><p>信号量（Semaphore）：是一个整型变量，可以对其执行 down 和 up 操作，也就是常见的 P 和 V 操作。</p>
+<ol>
+<li>down : 如果信号量大于 0 ，执行 -1 操作；如果信号量等于 0，进程睡眠，等待信号量大于 0；</li>
+<li>up ：对信号量执行 +1 操作，唤醒睡眠的进程让其完成 down 操作。</li>
+</ol>
+</li>
+</ul>
+<p>down 和 up 操作需要被设计成原语，不可分割，通常的做法是在执行这些操作的时候屏蔽中断。</p>
+<p>如果信号量的取值只能为 0 或者 1，那么就成为了 互斥量（Mutex） ，0 表示临界区已经加锁，1 表示临界区解锁。</p>
+<ul>
+<li>管程<ol>
+<li>管程有一个重要特性：在一个时刻只能有一个进程使用管程。进程在无法继续执行的时候不能一直占用管程，否则其它进程永远不能使用管程。</li>
+<li>管程引入了条件变量以及相关的操作：wait() 和 signal() 来实现同步操作。对条件变量执行 wait() 操作会导致调用进程阻塞，把管程让出来给另一个进程持有。signal() 操作用于唤醒被阻塞的进程。</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-5-进程通信"><a href="#2-5-进程通信" class="headerlink" title="2.5 进程通信"></a>2.5 进程通信</h4><p>进程同步与进程通信区别在于：进程同步控制多个进程按一定顺序执行，进程通信实现进程间信息的传输。</p>
+<ul>
+<li>管道<br>  通过调用 pipe 函数创建的，fd[0] 用于读，fd[1] 用于写。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pipe</span><span class="params">(<span class="keyword">int</span> fd[<span class="number">2</span>])</span></span>;</span><br></pre></td></tr></table></figure>
+它具有以下限制：<ol>
+<li>只支持半双工通信（单向交替传输）；</li>
+<li>只能在父子进程或者兄弟进程中使用。</li>
+</ol>
+</li>
+</ul>
+<p><img src="/images/27.jpg" alt=""></p>
+<ul>
+<li><p>FIFO</p>
+<ol>
+<li>也称为命名管道，去除了管道只能在父子进程中使用的限制。</li>
+<li>FIFO 常用于客户-服务器应用程序中，FIFO 用作汇聚点，在客户进程和服务器进程之间传递数据。</li>
+</ol>
+</li>
+<li><p>消息队列</p>
+</li>
+</ul>
+<p>相比于 FIFO，消息队列具有以下优点：<br>    1. 消息队列可以独立于读写进程存在，从而避免了 FIFO 中同步管道的打开和关闭时可能产生的困难；<br>    2. 避免了 FIFO 的同步阻塞问题，不需要进程自己提供同步方法；<br>    3. 读进程可以根据消息类型有选择地接收消息，而不像 FIFO 那样只能默认地接收。</p>
+<ul>
+<li><p>信号量<br>  它是一个计数器，用于为多个进程提供对共享数据对象的访问。</p>
+</li>
+<li><p>共享存储</p>
+<ol>
+<li>多个进程共享一个给定的存储区,这是最快的一种 IPC。</li>
+<li>需要使用信号量用来同步对共享存储的访问。</li>
+<li>多个进程可以将同一个文件映射到它们的地址空间从而实现共享内存。另外 XSI 共享内存不是使用文件，而是使用内存的匿名段。</li>
+</ol>
+</li>
+<li><p>套接字<br>  与其它通信机制不同的是，它可用于不同机器间的进程通信。</p>
+</li>
+</ul>
 
       
 
@@ -249,7 +376,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">结构型模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
         		</li>
       		
 		</ul>
@@ -261,7 +388,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -316,7 +443,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yanfzh.github.io/2020/07/04/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yanfzh.github.io/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -331,18 +458,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/05/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          观察者模式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/03/Git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Git的基本使用</div>
+    <a href="/2020/07/29/%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">并发与多线程</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -369,7 +487,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式的定义"><span class="toc-number">1.</span> <span class="toc-text">模式的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式的结构图"><span class="toc-number">2.</span> <span class="toc-text">模式的结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式的实现"><span class="toc-number">3.</span> <span class="toc-text">模式的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式应用实例"><span class="toc-number">4.</span> <span class="toc-text">模式应用实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式的优缺点"><span class="toc-number">5.</span> <span class="toc-text">模式的优缺点</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概述"><span class="toc-number">1.</span> <span class="toc-text">1. 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-基本特征"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 基本特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-基本功能"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 基本功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-系统调用"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 系统调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-大内核和微内核"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 大内核和微内核</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-中断分类"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 中断分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-进程管理"><span class="toc-number">2.</span> <span class="toc-text">2. 进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-进程与线程"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 进程与线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-进程状态切换"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 进程状态切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-进程调度算法"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 进程调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-批处理系统"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.3.1 批处理系统</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-交互式系统"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.3.2 交互式系统</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-实时系统"><span class="toc-number">2.3.3.</span> <span class="toc-text">2.3.3 实时系统</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-进程同步"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 进程同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-进程通信"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 进程通信</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

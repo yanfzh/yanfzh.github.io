@@ -6,22 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java JVM(下） | Yanfzh&#39;s  Blog</title>
+  <title>Archives: 2020/8 | Yanfzh&#39;s  Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. JVM性能调优在高性能硬件上部署程序，目前主要有两种方式：  通过 64 位 JDK 来使用大内存； 使用若干个 32 位虚拟机建立逻辑集群来利用硬件资源。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java JVM(下）">
-<meta property="og:url" content="http://yoursite.com/2020/07/27/Java-JVM-%E4%B8%8B%EF%BC%89/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Yanfzh&#39;s  Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2020/08/index.html">
 <meta property="og:site_name" content="Yanfzh&#39;s  Blog">
-<meta property="og:description" content="1. JVM性能调优在高性能硬件上部署程序，目前主要有两种方式：  通过 64 位 JDK 来使用大内存； 使用若干个 32 位虚拟机建立逻辑集群来利用硬件资源。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/24.jpg">
-<meta property="article:published_time" content="2020-07-27T09:57:30.000Z">
-<meta property="article:modified_time" content="2020-07-27T09:17:36.820Z">
 <meta property="article:author" content="Yanfzh">
-<meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/24.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yanfzh&#39;s  Blog" type="application/atom+xml">
   
@@ -63,7 +56,7 @@
 		  <h1 class="header-author">  <a > Yanfzh </a></h1>
 		
 		<div style="color:#77787b" >
-  			  Total Blogs ：17
+  			  Total Blogs ：18
                                </div>
 
 		</hgroup>
@@ -171,166 +164,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-JVM-下）" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Java JVM(下）
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/" class="archive-article-date">
+  	<time datetime="2020-08-04T05:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/">操作系统 （上）</a>
     </h1>
   
 
-        
-        <a href="/2020/07/27/Java-JVM-%E4%B8%8B%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-07-27T09:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-27</time>
-</a>
-         <!-- 需要添加的位置 -->
-          <!-- 开始添加字数统计-->
+        <div class="article-info info-on-right">
           
-            <div style="margin-top:10px;color:#72777b" >
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长 ≈ </span>
-        <span class="post-count">10分</span>
-      </span>
-    </span>
-</div>
-            
-          <!-- 添加完成 -->
-
-        
-      </header>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-JVM性能调优"><a href="#1-JVM性能调优" class="headerlink" title="1. JVM性能调优"></a>1. JVM性能调优</h3><p>在高性能硬件上部署程序，目前主要有两种方式：</p>
-<ul>
-<li>通过 64 位 JDK 来使用大内存；</li>
-<li>使用若干个 32 位虚拟机建立逻辑集群来利用硬件资源。<a id="more"></a>
-<h4 id="1-1-通过-64-位-JDK-来使用大内存"><a href="#1-1-通过-64-位-JDK-来使用大内存" class="headerlink" title="1.1 通过 64 位 JDK 来使用大内存"></a>1.1 通过 64 位 JDK 来使用大内存</h4></li>
-</ul>
-<p>堆内存变大后，虽然垃圾收集的频率减少了，但每次垃圾回收的时间变长。 如果堆内存为14 G，那么每次 Full GC 将长达数十秒。如果 Full GC 频繁发生，那么对于一个网站来说是无法忍受的。</p>
-<p>对于用户交互性强、对停顿时间敏感的系统，可以给 Java 虚拟机分配超大堆的前提是有把握把应用程序的 Full GC 频率控制得足够低，至少要低到不会影响用户使用。</p>
-<p>可能面临的问题：</p>
-<ol>
-<li>内存回收导致的长时间停顿；</li>
-<li>现阶段，64位 JDK 的性能普遍比 32 位 JDK 低；</li>
-<li>需要保证程序足够稳定，因为这种应用要是产生堆溢出几乎就无法产生堆转储快照（因为要产生超过 10GB 的 Dump 文件），哪怕产生了快照也几乎无法进行分析；</li>
-<li>相同程序在 64 位 JDK 消耗的内存一般比 32 位 JDK 大，这是由于指针膨胀，以及数据类型对齐补白等因素导致的。</li>
-</ol>
-<h4 id="1-2-使用-32-位-JVM-建立逻辑集群"><a href="#1-2-使用-32-位-JVM-建立逻辑集群" class="headerlink" title="1.2 使用 32 位 JVM 建立逻辑集群"></a>1.2 使用 32 位 JVM 建立逻辑集群</h4><p>在一台物理机器上启动多个应用服务器进程，每个服务器进程分配不同端口， 然后在前端搭建一个负载均衡器，以反向代理的方式来分配访问请求。</p>
-<p>考虑到在一台物理机器上建立逻辑集群的目的仅仅是为了尽可能利用硬件资源，并不需要关心状态保留、热转移之类的高可用性能需求， 也不需要保证每个虚拟机进程有绝对的均衡负载，因此使用无 Session 复制的亲合式集群是一个不错的选择。 我们仅仅需要保障集群具备亲合性，也就是均衡器按一定的规则算法（一般根据 SessionID 分配） 将一个固定的用户请求永远分配到固定的一个集群节点进行处理即可。</p>
-<p>可能遇到的问题：</p>
-<ol>
-<li>尽量避免节点竞争全局资源，如磁盘竞争，各个节点如果同时访问某个磁盘文件的话，很可能导致 IO 异常；</li>
-<li>很难高效利用资源池，如连接池，一般都是在节点建立自己独立的连接池，这样有可能导致一些节点池满了而另外一些节点仍有较多空余；</li>
-<li>各个节点受到 32 位的内存限制；</li>
-<li>大量使用本地缓存的应用，在逻辑集群中会造成较大的内存浪费，因为每个逻辑节点都有一份缓存，这时候可以考虑把本地缓存改成集中式缓存。</li>
-</ol>
-<h3 id="2-类加载机制"><a href="#2-类加载机制" class="headerlink" title="2. 类加载机制"></a>2. 类加载机制</h3><h4 id="2-1-类生命周期"><a href="#2-1-类生命周期" class="headerlink" title="2.1 类生命周期"></a>2.1 类生命周期</h4><p><img src="/images/24.jpg" alt=""></p>
-<p>加载、验证、准备、初始化和卸载这 5 个阶段的顺序是确定的，类的加载过程必须按照这种顺序按部就班地开始（注意是<code>开始</code>，而不是“进行”或“完成”），而解析阶段在某些情况下可以在初始化后再开始，这是为了支持 Java 语言的运行时绑定。</p>
-<p>以下五种情况必须对类进行初始化(而加载、验证、准备自然需要在此之前完成)：</p>
-<ol>
-<li>在遇到 new、putstatic、getstatic、invokestatic 字节码指令时，如果类尚未初始化，则需要先触发其初始化。</li>
-<li>对类进行反射调用时，如果类还没有初始化，则需要先触发其初始化。</li>
-<li>初始化一个类时，如果其父类还没有初始化，则需要先初始化父类。</li>
-<li>虚拟机启动时，用于需要指定一个包含 main() 方法的主类，虚拟机会先初始化这个主类。</li>
-<li>当使用 JDK 1.7 的动态语言支持时，如果一个 java.lang.invoke.MethodHandle 实例最后的解析结果为 REF_getStatic、REF_putStatic、REF_invokeStatic 的方法句柄，并且这个方法句柄所对应的类还没初始化，则需要先触发其初始化。</li>
-</ol>
-<p>前面的五种方式是对一个类的<code>主动引用</code>，除此之外，所有引用类的方法都不会触发初始化，称为被动引用。</p>
-<p>举几个例子~</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span> </span>&#123;    </span><br><span class="line">        <span class="keyword">static</span> &#123;         </span><br><span class="line">            System.out.println(<span class="string">"SuperClass init!"</span>);     </span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> value = <span class="number">1127</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">SuperClass</span> </span>&#123;    </span><br><span class="line">        <span class="keyword">static</span> &#123;        </span><br><span class="line">            System.out.println(<span class="string">"SubClass init!"</span>);    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConstClass</span> </span>&#123;    </span><br><span class="line">         <span class="keyword">static</span> &#123;        </span><br><span class="line">            System.out.println(<span class="string">"ConstClass init!"</span>);    </span><br><span class="line">        &#125;    </span><br><span class="line">         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String HELLOWORLD = <span class="string">"hello world!"</span></span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotInitialization</span> </span>&#123;    </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;        </span><br><span class="line">            System.out.println(SubClass.value);        </span><br><span class="line">            <span class="comment">/**         </span></span><br><span class="line"><span class="comment">            *  output : SuperClass init!         </span></span><br><span class="line"><span class="comment">            *          </span></span><br><span class="line"><span class="comment">            * 通过子类引用父类的静态对象不会导致子类的初始化         </span></span><br><span class="line"><span class="comment">            * 只有直接定义这个字段的类才会被初始化         </span></span><br><span class="line"><span class="comment">            */</span>         </span><br><span class="line">            SuperClass[] sca = <span class="keyword">new</span> SuperClass[<span class="number">10</span>];        </span><br><span class="line">            <span class="comment">/**         </span></span><br><span class="line"><span class="comment">            *  output :          </span></span><br><span class="line"><span class="comment">            *          </span></span><br><span class="line"><span class="comment">            * 通过数组定义来引用类不会触发此类的初始化         </span></span><br><span class="line"><span class="comment">            * 虚拟机在运行时动态创建了一个数组类         </span></span><br><span class="line"><span class="comment">            */</span>         </span><br><span class="line">            System.out.println(ConstClass.HELLOWORLD);        </span><br><span class="line">            <span class="comment">/**         </span></span><br><span class="line"><span class="comment">            *  output :          </span></span><br><span class="line"><span class="comment">            *          </span></span><br><span class="line"><span class="comment">            * 常量在编译阶段会存入调用类的常量池当中，本质上并没有直接引用到定义类常量的类，         </span></span><br><span class="line"><span class="comment">            * 因此不会触发定义常量的类的初始化。         </span></span><br><span class="line"><span class="comment">            * “hello world” 在编译期常量传播优化时已经存储到 NotInitialization 常量池中了。         </span></span><br><span class="line"><span class="comment">            */</span>    </span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-2-类加载过程"><a href="#2-2-类加载过程" class="headerlink" title="2.2 类加载过程"></a>2.2 类加载过程</h4><p>类加载过程包括 5 个阶段：加载、验证、准备、解析和初始化。</p>
-<h5 id="2-2-1-加载"><a href="#2-2-1-加载" class="headerlink" title="2.2.1 加载"></a>2.2.1 加载</h5><ol>
-<li>通过一个类的全限定名来获取定义次类的二进制流(ZIP 包、网络、运算生成、JSP 生成、数据库读取)。</li>
-<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。</li>
-<li>在内存中生成一个代表这个类的 java.lang.Class 对象，作为方法去这个类的各种数据的访问入口。</li>
-</ol>
-<p>数组类的特殊性：数组类本身不通过类加载器创建，它是由 Java 虚拟机直接创建的。但数组类与类加载器仍然有很密切的关系，因为数组类的元素类型最终是要靠类加载器去创建的，数组创建过程如下：</p>
-<ol>
-<li>如果数组的组件类型是引用类型，那就递归采用类加载加载。</li>
-<li>如果数组的组件类型不是引用类型，Java 虚拟机会把数组标记为引导类加载器关联。</li>
-<li>数组类的可见性与他的组件类型的可见性一致，如果组件类型不是引用类型，那数组类的可见性将默认为 public。</li>
-</ol>
-<p>内存中实例的 java.lang.Class 对象存在方法区中。作为程序访问方法区中这些类型数据的外部接口。<br>加载阶段与连接阶段的部分内容是交叉进行的，但是开始时间保持先后顺序。</p>
-<h5 id="2-2-2-验证"><a href="#2-2-2-验证" class="headerlink" title="2.2.2 验证"></a>2.2.2 验证</h5><p>验证阶段确保 Class 文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全。</p>
-<p>验证的过程如下：</p>
-<ol>
-<li>文件格式验证<br> 验证字节流是否符合 Class 文件格式的规范，并且能被当前版本的虚拟机处理，验证点如下： <ul>
-<li>是否以魔数 0XCAFEBABE 开头</li>
-<li>主次版本号是否在当前虚拟机处理范围内</li>
-<li>常量池是否有不被支持的常量类型</li>
-<li>指向常量的索引值是否指向了不存在的常量</li>
-<li>CONSTANT_Utf8_info 型的常量是否有不符合 UTF8 编码的数据</li>
-<li>……</li>
-</ul>
-</li>
-<li>元数据验证<br> 对字节码描述信息进行语义分析，确保其符合 Java 语法规范。</li>
-<li>字节码验证<br> 本阶段是验证过程中最复杂的一个阶段，是对方法体进行语义分析，保证方法在运行时不会出现危害虚拟机的事件。</li>
-<li>符号引用验证<br> 本阶段发生在解析阶段，确保解析正常执行。</li>
-</ol>
-<h5 id="2-2-3-准备"><a href="#2-2-3-准备" class="headerlink" title="2.2.3 准备"></a>2.2.3 准备</h5><p>准备阶段是正式为类变量（或称“静态成员变量”）分配内存并设置初始值的阶段。这些变量（不包括实例变量）所使用的内存都在方法区中进行分配。</p>
-<p>初始值“通常情况下”是数据类型的零值（0, null…），假设一个类变量的定义为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> value = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
-<p>那么变量 value 在准备阶段过后的初始值为 0 而不是 123，因为这时候尚未开始执行任何 Java 方法。</p>
-<p>存在“特殊情况”：如果类字段的字段属性表中存在 ConstantValue 属性，那么在准备阶段 value 就会被初始化为 ConstantValue 属性所指定的值，假设上面类变量 value 的定义变为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> value = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
-<p>那么在准备阶段虚拟机会根据 ConstantValue 的设置将 value 赋值为 123。</p>
-<h5 id="2-2-4-解析"><a href="#2-2-4-解析" class="headerlink" title="2.2.4 解析"></a>2.2.4 解析</h5><p>解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
-<h5 id="2-2-5-初始化"><a href="#2-2-5-初始化" class="headerlink" title="2.2.5 初始化"></a>2.2.5 初始化</h5><p>类初始化阶段是类加载过程的最后一步，是执行类构造器 <code>&lt;clinit&gt;()</code> 方法的过程。虚拟机会保证一个类的 <clinit>() 方法在多线程环境中被正确加锁、同步。如果多个线程同时去初始化一个类，那么只会有一个线程去执行这个类的 <clinit>() 方法。</p>
-<h4 id="2-3-接口加载过程"><a href="#2-3-接口加载过程" class="headerlink" title="2.3 接口加载过程"></a>2.3 接口加载过程</h4><p>接口加载过程与类加载过程稍有不同。<br>当一个类在初始化时，要求其父类全部都已经初始化过了，但是一个接口在初始化时，并不要求其父接口全部都完成了初始化，当真正用到父接口的时候才会初始化。</p>
-<h4 id="2-4-类加载器"><a href="#2-4-类加载器" class="headerlink" title="2.4 类加载器"></a>2.4 类加载器</h4><p>通过一个类的全限定名来获取描述此类的二进制字节流。</p>
-<h5 id="2-4-1-加载器的种类（3种"><a href="#2-4-1-加载器的种类（3种" class="headerlink" title="2.4.1 加载器的种类（3种)"></a>2.4.1 加载器的种类（3种)</h5><ul>
-<li>启动类加载器（Bootstrap ClassLoader）:<br>  加载存放在 <JAVA_HOME>\lib 目录中的，并且能被虚拟机识别的（仅按照文件名识别的类，如 rt.jar。</li>
-<li>扩展类加载器（Extension ClassLoader）：<br>  加载 <JAVA_HOME>\lib\ext 目录中的所有类库。</li>
-<li>应用程序类加载器（Application ClassLoader）：<br>  ClassLoader 负责，加载用户类路径（classpath）上所指定的类库。</li>
-</ul>
-<h5 id="2-4-2-双亲委派模型"><a href="#2-4-2-双亲委派模型" class="headerlink" title="2.4.2 双亲委派模型"></a>2.4.2 双亲委派模型</h5><p>双亲委派模型是描述类加载器之间的层次关系。它要求除了顶层的启动类加载器外，其余的类加载器都应当有自己的父类加载器。（父子关系一般不会以继承的关系实现，而是以组合关系来复用父加载器的代码）</p>
-<ul>
-<li>工作过程<br>  如果一个类加载器收到一个类加载的请求，它首先不会自己加载，而是把这个请求委派给父类加载器。只有父类无法完成时子类才会尝试加载。</li>
-</ul>
-<p>在 java.lang.ClassLoader 中的 loadClass() 方法中实现该过程。</p>
-<ul>
-<li><p>使用该模型的原因</p>
-<p>  像 java.lang.Object 这些存放在 rt.jar 中的类，无论使用哪个类加载器加载，最终都会委派给最顶端的启动类加载器加载，从而使得不同加载器加载的 Object 类都是同一个。</p>
-<p>  相反，如果没有使用双亲委派模型，由各个类加载器自行去加载的话，如果用户自己编写了一个称为 java.lang.Object 的类，并放在 classpath 下，那么系统将会出现多个不同的 Object 类，Java 类型体系中最基础的行为也就无法保证。</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -343,128 +218,17 @@
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-           <a class="weixin share-sns" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yanfzh.github.io/2020/07/27/Java-JVM-%E4%B8%8B%EF%BC%89/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/07/29/%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          并发与多线程
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/07/26/Java-JVM%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java JVM(上)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-JVM性能调优"><span class="toc-number">1.</span> <span class="toc-text">1. JVM性能调优</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-通过-64-位-JDK-来使用大内存"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 通过 64 位 JDK 来使用大内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-使用-32-位-JVM-建立逻辑集群"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 使用 32 位 JVM 建立逻辑集群</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-类加载机制"><span class="toc-number">2.</span> <span class="toc-text">2. 类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-类生命周期"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 类生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-类加载过程"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 类加载过程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-1-加载"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.2.1 加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-验证"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.2 验证</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-3-准备"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.2.3 准备</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-4-解析"><span class="toc-number">2.2.4.</span> <span class="toc-text">2.2.4 解析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-5-初始化"><span class="toc-number">2.2.5.</span> <span class="toc-text">2.2.5 初始化</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-接口加载过程"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 接口加载过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-类加载器"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 类加载器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-4-1-加载器的种类（3种"><span class="toc-number">2.4.1.</span> <span class="toc-text">2.4.1 加载器的种类（3种)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-4-2-双亲委派模型"><span class="toc-number">2.4.2.</span> <span class="toc-text">2.4.2 双亲委派模型</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
+    
 
 
           </div>
@@ -492,8 +256,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -557,19 +321,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">IO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MySQL连接</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,11 +329,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反射</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color3">MySQL连接</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,15 +337,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">结构型模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">容器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">创建型模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">进程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,11 +357,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color1">结构型模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">行为型模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">创建型模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
             
             <div class="clearfix"></div>
