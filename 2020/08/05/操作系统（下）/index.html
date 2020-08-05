@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 进程 | Yanfzh&#39;s  Blog</title>
+  <title>操作系统（下） | Yanfzh&#39;s  Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yanfzh&#39;s  Blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E8%BF%9B%E7%A8%8B/index.html">
+  <meta name="description" content="1. 死锁1.1 死锁产生的必要条件 互斥：每个资源要么已经分配给了一个进程，要么就是可用的。 占有和等待：已经得到了某个资源的进程可以再请求新的资源。 不可抢占：已经分配给一个进程的资源不能强制性地被抢占，它只能被占有它的进程显式地释放。 环路等待：有两个或者两个以上的进程组成一条环路，该环路中的每个进程都在等待下一个进程所占有的资源。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统（下）">
+<meta property="og:url" content="http://yoursite.com/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8B%EF%BC%89/index.html">
 <meta property="og:site_name" content="Yanfzh&#39;s  Blog">
+<meta property="og:description" content="1. 死锁1.1 死锁产生的必要条件 互斥：每个资源要么已经分配给了一个进程，要么就是可用的。 占有和等待：已经得到了某个资源的进程可以再请求新的资源。 不可抢占：已经分配给一个进程的资源不能强制性地被抢占，它只能被占有它的进程显式地释放。 环路等待：有两个或者两个以上的进程组成一条环路，该环路中的每个进程都在等待下一个进程所占有的资源。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/28.jpg">
+<meta property="og:image" content="http://yoursite.com/images/29.jpg">
+<meta property="article:published_time" content="2020-08-05T06:25:44.000Z">
+<meta property="article:modified_time" content="2020-08-05T07:31:03.535Z">
 <meta property="article:author" content="Yanfzh">
+<meta property="article:tag" content="进程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/28.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yanfzh&#39;s  Blog" type="application/atom+xml">
   
@@ -164,36 +172,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-操作系统（下）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      操作系统（下）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8B%EF%BC%89/" class="archive-article-date">
+
+        
+        <a href="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8B%EF%BC%89/" class="archive-article-date">
   	<time datetime="2020-08-05T06:25:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8B%EF%BC%89/">操作系统（下）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
+         <!-- 需要添加的位置 -->
+          <!-- 开始添加字数统计-->
           
+            <div style="margin-top:10px;color:#72777b" >
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">2.8k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长 ≈ </span>
+        <span class="post-count">9分</span>
+      </span>
+    </span>
+</div>
+            
+          <!-- 添加完成 -->
+
+        
+      </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-死锁"><a href="#1-死锁" class="headerlink" title="1. 死锁"></a>1. 死锁</h3><h4 id="1-1-死锁产生的必要条件"><a href="#1-1-死锁产生的必要条件" class="headerlink" title="1.1 死锁产生的必要条件"></a>1.1 死锁产生的必要条件</h4><ul>
+<li>互斥：每个资源要么已经分配给了一个进程，要么就是可用的。</li>
+<li>占有和等待：已经得到了某个资源的进程可以再请求新的资源。</li>
+<li>不可抢占：已经分配给一个进程的资源不能强制性地被抢占，它只能被占有它的进程显式地释放。</li>
+<li>环路等待：有两个或者两个以上的进程组成一条环路，该环路中的每个进程都在等待下一个进程所占有的资源。<a id="more"></a>
+<h4 id="1-2-死锁的处理方法"><a href="#1-2-死锁的处理方法" class="headerlink" title="1.2 死锁的处理方法"></a>1.2 死锁的处理方法</h4></li>
+</ul>
+<p>主要有以下四种方法：</p>
+<ul>
+<li><p>鸵鸟策略<br>  就忽略掉…</p>
+</li>
+<li><p>死锁检测与死锁恢复</p>
+<ol>
+<li>每种类型一个资源的死锁检测<br> 每种类型一个资源的死锁检测算法是通过检测有向图是否存在环来实现，从一个节点出发进行深度优先搜索，对访问过的节点进行标记，如果访问了已经标记的节点，就表示有向图存在环，也就是检测到死锁的发生。</li>
+<li>每种类型多个资源的死锁检测<br> 每个进程最开始时都不被标记，执行过程有可能被标记。当算法结束时，任何没有被标记的进程都是死锁进程。</li>
+<li>死锁恢复<br> 利用抢占恢复<br> 利用回滚恢复<br> 通过杀死进程恢复</li>
+</ol>
+</li>
+<li><p>死锁预防</p>
+<ol>
+<li>破坏互斥条件</li>
+<li>破坏占有和等待条件<br> 一种实现方式是规定所有进程在开始执行前请求所需的全部资源</li>
+<li>破坏不可强占条件</li>
+<li>破坏环路等待<br> 给统一资源编号，进程只能按编号顺序来请求资源</li>
+</ol>
+</li>
+<li><p>死锁避免<br>  判断一个状态的安全性，若不安全，则拒绝进入状态</p>
+</li>
+</ul>
+<h3 id="2-内存管理"><a href="#2-内存管理" class="headerlink" title="2. 内存管理"></a>2. 内存管理</h3><h4 id="2-1-虚拟内存"><a href="#2-1-虚拟内存" class="headerlink" title="2.1 虚拟内存"></a>2.1 虚拟内存</h4><ul>
+<li><p>目的：为了让物理内存扩充成更大的逻辑内存，让程序获得更多的可用内存。</p>
+</li>
+<li><p>工作原理：<br>  操作系统将内存抽象成地址空间。每个程序拥有自己的地址空间，这个地址空间被分割成多个块，每一块称为一页。这些页被映射到物理内存，但不需要映射到连续的物理内存，也不需要所有页都必须在物理内存中。当程序引用到不在物理内存中的页时，由硬件执行必要的映射，将缺失的部分装入物理内存并重新执行失败的指令。</p>
+<p>  虚拟内存允许程序不用将地址空间中的每一页都映射到物理内存，也就是说一个程序不需要全部调入内存就可以运行，这使得有限的内存运行大程序成为可能。</p>
+</li>
+</ul>
+<h4 id="2-2-分页系统地址映射"><a href="#2-2-分页系统地址映射" class="headerlink" title="2.2 分页系统地址映射"></a>2.2 分页系统地址映射</h4><p>内存管理单元（MMU）管理着地址空间和物理内存的转换，其中的页表（Page table）存储着页（程序地址空间）和页框（物理内存空间）的映射表。</p>
+<p>一个虚拟地址分成两个部分，一部分存储页面号，一部分存储偏移量。</p>
+<h4 id="2-3-页面置换算法"><a href="#2-3-页面置换算法" class="headerlink" title="2.3 页面置换算法"></a>2.3 页面置换算法</h4><p>主要目标是使页面置换频率最低（也可以说缺页率最低）。</p>
+<p>在程序运行过程中，如果要访问的页面不在内存中，就发生缺页中断从而将该页调入内存中。此时如果内存已无空闲空间，系统必须从内存中调出一个页面到磁盘对换区中来腾出空间。</p>
+<ul>
+<li><p>1.最佳（OPT, Optimal replacement algorithm）<br>  所选择的被换出的页面将是最长时间内不再被访问，通常可以保证获得最低的缺页率。是一种理论上的算法，因为无法知道一个页面多长时间不再被访问。</p>
+</li>
+<li><p>2.最近最久未使用（LRU, Least Recently Used）<br>  可以知道过去使用页面的情况。LRU 将最近最久未使用的页面换出。<br>  为了实现 LRU，需要在内存中维护一个所有页面的链表。当一个页面被访问时，将这个页面移到链表表头。这样就能保证链表表尾的页面是最近最久未访问的。因为每次访问都需要更新链表，因此这种方式实现的 LRU 代价很高。</p>
+</li>
+<li><p>3.最近未使用（NRU, Not Recently Used）<br>  每个页面都有两个状态位：R 与 M，当页面被访问时设置页面的 R=1，当页面被修改时设置 M=1。其中 R 位会定时被清零。当发生缺页中断时，NRU 算法随机地从类编号最小的非空类中挑选一个页面将它换出。NRU 优先换出已经被修改的脏页面（R=0，M=1），而不是被频繁使用的干净页面（R=1，M=0）。</p>
+</li>
+<li><p>4.先进先出（FIFO）<br>  选择换出的页面是最先进入的页面。该算法会将那些经常被访问的页面换出，导致缺页率升高。</p>
+</li>
+<li><p>5.时钟（Clock）<br>  时钟算法使用环形链表将页面连接起来，再使用一个指针指向最老的页面。</p>
+</li>
+</ul>
+<h4 id="2-4-分段"><a href="#2-4-分段" class="headerlink" title="2.4 分段"></a>2.4 分段</h4><p>虚拟内存采用的是分页技术，也就是将地址空间划分成固定大小的页，每一页再与内存进行映射。</p>
+<p>分段的做法是把每个表分成段，一个段构成一个独立的地址空间。每个段的长度可以不同，并且可以动态增长。</p>
+<h4 id="2-5-段页式"><a href="#2-5-段页式" class="headerlink" title="2.5 段页式"></a>2.5 段页式</h4><p>程序的地址空间划分成多个拥有独立地址空间的段，每个段上的地址空间划分成大小相同的页。这样既拥有分段系统的共享和保护，又拥有分页系统的虚拟内存功能。</p>
+<h4 id="2-6-分页与分段的比较"><a href="#2-6-分页与分段的比较" class="headerlink" title="2.6 分页与分段的比较"></a>2.6 分页与分段的比较</h4><ul>
+<li>对程序员的透明性：分页透明，但是分段需要程序员显式划分每个段。</li>
+<li>地址空间的维度：分页是一维地址空间，分段是二维的。</li>
+<li>大小是否可以改变：页的大小不可变，段的大小可以动态改变。</li>
+<li>出现的原因：分页主要用于实现虚拟内存，从而获得更大的地址空间；分段主要是为了使程序和数据可以被划分为逻辑上独立的地址空间并且有助于共享和保护。</li>
+</ul>
+<h3 id="3-设备管理"><a href="#3-设备管理" class="headerlink" title="3. 设备管理"></a>3. 设备管理</h3><h4 id="3-1-磁盘结构"><a href="#3-1-磁盘结构" class="headerlink" title="3.1 磁盘结构"></a>3.1 磁盘结构</h4><ol>
+<li>盘面（Platter）：一个磁盘有多个盘面；</li>
+<li>磁道（Track）：盘面上的圆形带状区域，一个盘面可以有多个磁道；</li>
+<li>扇区（Track Sector）：磁道上的一个弧段，一个磁道可以有多个扇区，它是最小的物理储存单位，目前主要有 512 bytes 与 4 K 两种大小；</li>
+<li>磁头（Head）：与盘面非常接近，能够将盘面上的磁场转换为电信号（读），或者将电信号转换为盘面的磁场（写）；</li>
+<li>制动手臂（Actuator arm）：用于在磁道之间移动磁头；</li>
+<li>主轴（Spindle）：使整个盘面转动。<br><img src="/images/28.jpg" alt=""></li>
+</ol>
+<h4 id="3-2-磁盘调度算法"><a href="#3-2-磁盘调度算法" class="headerlink" title="3.2 磁盘调度算法"></a>3.2 磁盘调度算法</h4><p>读写一个磁盘块的时间的影响因素有：<br>    1. 旋转时间（主轴转动盘面，使得磁头移动到适当的扇区上）<br>    2. 寻道时间（制动手臂移动，使得磁头移动到适当的磁道上）<br>    3. 实际的数据传输时间<br>其中，寻道时间最长，因此磁盘调度的主要目标是使磁盘的平均寻道时间最短。</p>
+<ul>
+<li><p>先来先服务（FCFS）<br>  按照磁盘请求的顺序进行调度。优点是公平和简单。缺点是使平均寻道时间可能较长。</p>
+</li>
+<li><p>最短寻道时间优先（SSTF）<br>  优先调度与当前磁头所在磁道距离最近的磁道。<br>  不够公平。如果新到达的磁道请求总是比一个在等待的磁道请求近，那么在等待的磁道请求会一直等待下去，也就是出现饥饿现象。具体来说，两端的磁道请求更容易出现饥饿现象。</p>
+</li>
+<li><p>电梯算法（SCAN）<br>  电梯算法（扫描算法）总是按一个方向来进行磁盘调度，直到该方向上没有未完成的磁盘请求，然后改变方向，因为考虑了移动方向，因此所有的磁盘请求都会被满足，解决了 SSTF 的饥饿问题。</p>
+</li>
+</ul>
+<h3 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h3><h4 id="4-1-编译系统"><a href="#4-1-编译系统" class="headerlink" title="4.1 编译系统"></a>4.1 编译系统</h4><p>以下是一个 hello.c 程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    printf(<span class="string">"hello, world"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 Unix 系统上，由编译器把源文件转换为目标文件。<br>    gcc -o hello hello.c</p>
+<p>这个过程大致如下：<br><img src="/images/29.jpg" alt=""></p>
+<ul>
+<li>预处理阶段：处理以 # 开头的预处理命令；</li>
+<li>编译阶段：翻译成汇编文件；</li>
+<li>汇编阶段：将汇编文件翻译成可重定位目标文件；</li>
+<li>链接阶段：将可重定位目标文件和 printf.o 等单独预编译好的目标文件进行合并，得到最终的可执行目标文件。</li>
+</ul>
+<h4 id="4-2-静态链接"><a href="#4-2-静态链接" class="headerlink" title="4.2 静态链接"></a>4.2 静态链接</h4><p>静态链接器以一组可重定位目标文件为输入，生成一个完全链接的可执行目标文件作为输出。链接器主要完成以下两个任务：</p>
+<ul>
+<li>符号解析：每个符号对应于一个函数、一个全局变量或一个静态变量，符号解析的目的是将每个符号引用与一个符号定义关联起来。</li>
+<li>重定位：链接器通过把每个符号定义与一个内存位置关联起来，然后修改所有对这些符号的引用，使得它们指向这个内存位置。</li>
+</ul>
+<h4 id="4-3-目标文件"><a href="#4-3-目标文件" class="headerlink" title="4.3 目标文件"></a>4.3 目标文件</h4><ul>
+<li>可执行目标文件：可以直接在内存中执行；</li>
+<li>可重定位目标文件：可与其它可重定位目标文件在链接阶段合并，创建一个可执行目标文件；</li>
+<li>共享目标文件：这是一种特殊的可重定位目标文件，可以在运行时被动态加载进内存并链接；</li>
+</ul>
+<h4 id="4-4-动态链接"><a href="#4-4-动态链接" class="headerlink" title="4.4 动态链接"></a>4.4 动态链接</h4><p>静态库有以下两个问题：</p>
+<ul>
+<li>当静态库更新时那么整个程序都要重新进行链接；</li>
+<li>对于 printf 这种标准函数库，如果每个程序都要有代码，这会极大浪费资源。</li>
+</ul>
+<p>共享库是为了解决静态库的这两个问题而设计的，在 Linux 系统中通常用 .so 后缀来表示，Windows 系统上它们被称为<code>DLL</code>。它具有以下特点：</p>
+<ul>
+<li>在给定的文件系统中一个库只有一个文件，所有引用该库的可执行目标文件都共享这个文件，它不会被复制到引用它的可执行文件中；</li>
+<li>在内存中，一个共享库的 .text 节（已编译程序的机器代码）的一个副本可以被不同的正在运行的进程共享。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -205,7 +346,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -218,66 +359,119 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+           <a class="weixin share-sns" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yanfzh.github.io/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8B%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/" class="archive-article-date">
-  	<time datetime="2020-08-04T05:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作系统 （上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20(%E4%B8%8A)/">操作系统 （上）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-死锁"><span class="toc-number">1.</span> <span class="toc-text">1. 死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-死锁产生的必要条件"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 死锁产生的必要条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-死锁的处理方法"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 死锁的处理方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-内存管理"><span class="toc-number">2.</span> <span class="toc-text">2. 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-虚拟内存"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 虚拟内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-分页系统地址映射"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 分页系统地址映射</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-页面置换算法"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 页面置换算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-分段"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 分段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-段页式"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 段页式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-分页与分段的比较"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 分页与分段的比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-设备管理"><span class="toc-number">3.</span> <span class="toc-text">3. 设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-磁盘结构"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 磁盘结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-磁盘调度算法"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 磁盘调度算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-链接"><span class="toc-number">4.</span> <span class="toc-text">4. 链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-编译系统"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 编译系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-静态链接"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 静态链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-目标文件"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 目标文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-动态链接"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 动态链接</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -305,9 +499,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
