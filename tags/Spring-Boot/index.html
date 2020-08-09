@@ -6,22 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java IO | Yanfzh&#39;s  Blog</title>
+  <title>Tag: Spring Boot | Yanfzh&#39;s  Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、流的概念和作用 流：代表任何有能力产出数据的数据源对象或者是有能力接受数据的接收端对象，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。 作用：为数据源和目的地建立一个输送通道。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java IO">
-<meta property="og:url" content="http://yoursite.com/2020/07/19/Java-IO/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Yanfzh&#39;s  Blog">
+<meta property="og:url" content="http://yoursite.com/tags/Spring-Boot/index.html">
 <meta property="og:site_name" content="Yanfzh&#39;s  Blog">
-<meta property="og:description" content="1、流的概念和作用 流：代表任何有能力产出数据的数据源对象或者是有能力接受数据的接收端对象，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。 作用：为数据源和目的地建立一个输送通道。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/19.jpg">
-<meta property="article:published_time" content="2020-07-19T08:28:04.000Z">
-<meta property="article:modified_time" content="2020-07-19T09:08:01.430Z">
 <meta property="article:author" content="Yanfzh">
-<meta property="article:tag" content="IO">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/19.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yanfzh&#39;s  Blog" type="application/atom+xml">
   
@@ -171,231 +164,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-IO" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Java IO
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/08/07/Spring-Boot/" class="archive-article-date">
+  	<time datetime="2020-08-07T00:51:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-07</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/07/Spring-Boot/">Spring Boot</a>
     </h1>
   
 
-        
-        <a href="/2020/07/19/Java-IO/" class="archive-article-date">
-  	<time datetime="2020-07-19T08:28:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
-</a>
-         <!-- 需要添加的位置 -->
-          <!-- 开始添加字数统计-->
+        <div class="article-info info-on-right">
           
-            <div style="margin-top:10px;color:#72777b" >
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.1k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长 ≈ </span>
-        <span class="post-count">7分</span>
-      </span>
-    </span>
-</div>
-            
-          <!-- 添加完成 -->
-
-        
-      </header>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、流的概念和作用"><a href="#1、流的概念和作用" class="headerlink" title="1、流的概念和作用"></a>1、流的概念和作用</h3><ul>
-<li>流：代表任何有能力产出数据的数据源对象或者是有能力接受数据的接收端对象，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</li>
-<li>作用：为数据源和目的地建立一个输送通道。<a id="more"></a>
-<h3 id="2、I-O流常见类"><a href="#2、I-O流常见类" class="headerlink" title="2、I/O流常见类"></a>2、I/O流常见类</h3></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>类</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>File</td>
-<td>文件类，用于文件或者目录的描述信息，例如生成新目录，修改文件名，删除文件，判断文件所在路径等。</td>
-</tr>
-<tr>
-<td>InputStream</td>
-<td><code>字节</code>输入流，抽象类，基于字节的输入操作，是所有输入流的父类。定义了所有输入流都具有的共同特征。</td>
-</tr>
-<tr>
-<td>OutputStream</td>
-<td><code>字节</code>输入流，抽象类。基于字节的输出操作。是所有输出流的父类。定义了所有输出流都具有的共同特征。</td>
-</tr>
-<tr>
-<td>Reader</td>
-<td><code>字符</code>输入流，抽象类，基于字符的输入操作。</td>
-</tr>
-<tr>
-<td>Writer</td>
-<td><code>字符</code>输出流，抽象类，基于字符的输出操作。</td>
-</tr>
-<tr>
-<td>RandomAccessFile</td>
-<td>随机存取文件类，一个独立的类，直接继承至Object.它的功能丰富，可以从文件的<code>任意</code>位置进行存取（输入输出）操作。注意：该对象在实例化时，如果要操作的文件不存在，会自动创建；如果文件存在，写数据未指定位置，会从头开始写，即覆盖原有的内容。 可以用于多线程下载或多个线程同时写数据到文件。</td>
-</tr>
-</tbody></table>
-<p>Java流类的类结构图<br><img src="/images/19.jpg" alt=""></p>
-<ul>
-<li>字节流：数据流中最小的数据单元是字节</li>
-<li>字符流：数据流中最小的数据单元是字符， Java中的字符是Unicode编码，一个字符占用两个字节。</li>
-</ul>
-<h3 id="3、流的特性"><a href="#3、流的特性" class="headerlink" title="3、流的特性"></a>3、流的特性</h3><ul>
-<li>先进先出，最先写入输出流的数据最先被输入流读取到。</li>
-<li>顺序存取，可以一个接一个地往流中写入一串字节，读出时也将按写入顺序读取一串字节，不能随机访问中间的数据。（RandomAccessFile可以从文件的任意位置进行存取（输入输出）操作）</li>
-<li>只读或只写，每个流只能是输入流或输出流的一种，不能同时具备两个功能，输入流只能进行读操作，对输出流只能进行写操作。在一个数据传输通道中，如果既要写入数据，又要读取数据，则要分别提供两个流。 </li>
-</ul>
-<h3 id="4、Java-IO流对象"><a href="#4、Java-IO流对象" class="headerlink" title="4、Java IO流对象"></a>4、Java IO流对象</h3><h4 id="4-1-输入字节流InputStream"><a href="#4-1-输入字节流InputStream" class="headerlink" title="4.1 输入字节流InputStream"></a>4.1 输入字节流InputStream</h4><ul>
-<li>InputStream中的三个基本的读方法：</li>
-</ul>
-<ol>
-<li>abstract int read() ：读取一个字节数据，并返回读到的数据，如果返回-1，表示读到了输入流的末尾。</li>
-<li>intread(byte[]?b) ：将数据读入一个字节数组，同时返回实际读取的字节数。如果返回-1，表示读到了输入流的末尾。</li>
-<li>intread(byte[]?b, int?off, int?len) ：将数据读入一个字节数组，同时返回实际读取的字节数。如果返回-1，表示读到了输入流的末尾。off指定在数组b中存放数据的起始偏移位置；len指定读取的最大字节数。</li>
-</ol>
-<p>流结束的判断：方法read()的返回值为-1时；readLine()的返回值为null时。</p>
-<ul>
-<li>其他方法</li>
-</ul>
-<ol>
-<li>long skip(long?n)：在输入流中跳过n个字节，并返回实际跳过的字节数。</li>
-<li>int available() ：返回在不发生阻塞的情况下，可读取的字节数。</li>
-<li>void close() ：关闭输入流，释放和这个流相关的系统资源。</li>
-<li>voidmark(int?readlimit) ：在输入流的当前位置放置一个标记，如果读取的字节数多于readlimit设置的值，则流忽略这个标记。</li>
-<li>void reset() ：返回到上一个标记。</li>
-<li>booleanmarkSupported() ：测试当前流是否支持mark和reset方法。如果支持，返回true，否则返回false。</li>
-</ol>
-<h4 id="4-2-输出字节流OutputStream"><a href="#4-2-输出字节流OutputStream" class="headerlink" title="4.2 输出字节流OutputStream"></a>4.2 输出字节流OutputStream</h4><ul>
-<li>outputStream中的三个基本的写方法   </li>
-</ul>
-<ol>
-<li>abstract void write(int?b)：往输出流中写入一个字节。</li>
-<li>void write(byte[]?b) ：往输出流中写入数组b中的所有字节。</li>
-<li>void write(byte[]?b, int?off, int?len) ：往输出流中写入数组b中从偏移量off开始的len个字节的数据。</li>
-</ol>
-<ul>
-<li>其它方法</li>
-</ul>
-<ol>
-<li>void flush() ：刷新输出流，强制缓冲区中的输出字节被写出。</li>
-<li>void close() ：关闭输出流，释放和这个流相关的系统资源。</li>
-</ol>
-<h4 id="4-3-字符输入流Reader"><a href="#4-3-字符输入流Reader" class="headerlink" title="4.3 字符输入流Reader"></a>4.3 字符输入流Reader</h4><ul>
-<li>主要方法：</li>
-</ul>
-<ol>
-<li>public int read() throws IOException; //读取一个字符，返回值为读取的字符 </li>
-<li>public int read(char cbuf[]) throws IOException; /<em>读取一系列字符到数组cbuf[]中，返回值为实际读取的字符的数量</em>/ </li>
-<li>public abstract int read(char cbuf[],int off,int len) throws IOException; /<em>读取len个字符，从数组cbuf[]的下标off处开始存放，返回值为实际读取的字符数量，该方法必须由子类实现</em>/ </li>
-</ol>
-<h4 id="4-4-字符输出流Writer"><a href="#4-4-字符输出流Writer" class="headerlink" title="4.4 字符输出流Writer"></a>4.4 字符输出流Writer</h4><ul>
-<li>主要方法：</li>
-</ul>
-<ol>
-<li>public void write(int c) throws IOException； //将整型值c的低16位写入输出流 </li>
-<li>public void write(char cbuf[]) throws IOException； //将字符数组cbuf[]写入输出流 </li>
-<li>public abstract void write(char cbuf[],int off,int len) throws IOException； //将字符数组cbuf[]中的从索引为off的位置处开始的len个字符写入输出流 </li>
-<li>public void write(String str) throws IOException； //将字符串str中的字符写入输出流 </li>
-<li>public void write(String str,int off,int len) throws IOException； //将字符串str 中从索引off开始处的len个字符写入输出流 </li>
-</ol>
-<h3 id="5、转换流"><a href="#5、转换流" class="headerlink" title="5、转换流"></a>5、转换流</h3><ul>
-<li>特点：</li>
-</ul>
-<ol>
-<li>其是字符流和字节流之间的桥梁</li>
-<li>可对读取到的字节数据经过指定编码转换成字符</li>
-<li>可对读取到的字符数据经过指定编码转换成字节</li>
-</ol>
-<ul>
-<li>具体对象体现：</li>
-</ul>
-<ol>
-<li>InputStreamReader:字节到字符的桥梁</li>
-<li>OutputStreamWriter:字符到字节的桥梁</li>
-<li>OutputStreamWriter(OutStreamout):将字节流以字符流输出。</li>
-<li>InputStreamReader(InputStream in)：将字节流以字符流输入。</li>
-</ol>
-<h3 id="6、字节流与字符流的区别"><a href="#6、字节流与字符流的区别" class="headerlink" title="6、字节流与字符流的区别"></a>6、字节流与字符流的区别</h3><ul>
-<li><p>节流没有缓冲区，是直接输出的，而字符流是输出到缓冲区的。因此在输出时，字节流不调用colse()方法时，信息已经输出了，而字符流只有在调用close()方法关闭缓冲区时，信息才输出。要想字符流在未关闭时输出信息，则需要手动调用flush()方法。</p>
-</li>
-<li><p>读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。</p>
-</li>
-<li><p>处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。</p>
-</li>
-<li><p>结论：只要是处理纯文本数据，就优先考虑使用字符流。除此之外都使用字节流。</p>
-</li>
-</ul>
-<h3 id="7、File类"><a href="#7、File类" class="headerlink" title="7、File类"></a>7、File类</h3><ul>
-<li><p>File类是Object的直接子类，同时它继承了Comparable接口可以进行数组的排序。File类的操作包括文件的创建、删除、重命名、得到路径、创建时间等。</p>
-</li>
-<li><p>构造函数：</p>
-</li>
-</ul>
-<ol>
-<li>File (String   pathname)   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File  f1=<span class="keyword">new</span> File(<span class="string">"FileTest1.txt"</span>); <span class="comment">//创建文件对象f1，f1所指的文件是在当前目录下创建的FileTest1.txt</span></span><br></pre></td></tr></table></figure></li>
-<li>File (String  parent  ,  String child)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File f2=<span class="keyword">new</span>  File(<span class="string">"D:\\dir1"</span>,<span class="string">"FileTest2.txt"</span>); <span class="comment">// 注意：D:\\dir1目录事先必须存在，否则异常</span></span><br></pre></td></tr></table></figure></li>
-<li>File (File parent,String child)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">File  f4=<span class="keyword">new</span> File(<span class="string">"\\dir3"</span>);</span><br><span class="line">File  f5=<span class="keyword">new</span> File(f4,<span class="string">"FileTest5.txt"</span>); <span class="comment">//在如果 \\dir3目录不存在使用f4.mkdir()先创建</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>一个对应于某磁盘文件或目录的File对象一经创建， 就可以通过调用它的方法来获得文件或目录的属性。    </li>
-</ul>
-<ol>
-<li>public boolean exists( ) 判断文件或目录是否存在</li>
-<li>public boolean isFile( ) 判断是文件还是目录 </li>
-<li>public boolean isDirectory( ) 判断是文件还是目录</li>
-<li>public String getName( ) 返回文件名或目录名</li>
-<li>public String getPath( ) 返回文件或目录的路径。</li>
-<li>public long length( ) 获取文件的长度 </li>
-<li>public String[ ] list ( ) 将目录中所有文件名保存在字符串数组中返回。 </li>
-</ol>
-<ul>
-<li>File类中还定义了一些对文件或目录进行管理、操作的方法，常用的方法有：</li>
-</ul>
-<ol>
-<li>public boolean renameTo( File newFile );    重命名文件</li>
-<li>public void delete( );   删除文件</li>
-<li>public boolean mkdir( ); 创建目录</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IO</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -408,128 +218,17 @@
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-           <a class="weixin share-sns" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yanfzh.github.io/2020/07/19/Java-IO/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/07/21/Java%E5%8F%8D%E5%B0%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java反射
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/07/19/String%E3%80%81StringBuffer%E3%80%81StringBuilder%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">String、StringBuffer、StringBuilder的区别</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、流的概念和作用"><span class="toc-number">1.</span> <span class="toc-text">1、流的概念和作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、I-O流常见类"><span class="toc-number">2.</span> <span class="toc-text">2、I&#x2F;O流常见类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、流的特性"><span class="toc-number">3.</span> <span class="toc-text">3、流的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、Java-IO流对象"><span class="toc-number">4.</span> <span class="toc-text">4、Java IO流对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-输入字节流InputStream"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 输入字节流InputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-输出字节流OutputStream"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 输出字节流OutputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-字符输入流Reader"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 字符输入流Reader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-字符输出流Writer"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 字符输出流Writer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、转换流"><span class="toc-number">5.</span> <span class="toc-text">5、转换流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、字节流与字符流的区别"><span class="toc-number">6.</span> <span class="toc-text">6、字节流与字符流的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、File类"><span class="toc-number">7.</span> <span class="toc-text">7、File类</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
+    
 
 
           </div>
@@ -557,9 +256,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
