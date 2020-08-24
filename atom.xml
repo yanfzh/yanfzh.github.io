@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-09T10:48:07.556Z</updated>
+  <updated>2020-08-24T12:56:54.933Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot踩坑记录</title>
+    <link href="http://yoursite.com/2020/08/24/SpringBoot%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2020/08/24/SpringBoot%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</id>
+    <published>2020-08-24T12:56:54.000Z</published>
+    <updated>2020-08-24T12:56:54.933Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Spring Boot</title>
@@ -479,32 +494,6 @@
     
     
       <category term="创建型模式" scheme="http://yoursite.com/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速排序</title>
-    <link href="http://yoursite.com/2020/06/30/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    <id>http://yoursite.com/2020/06/30/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</id>
-    <published>2020-06-30T15:15:19.000Z</published>
-    <updated>2020-07-15T03:50:05.828Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、算法思想"><a href="#1、算法思想" class="headerlink" title="1、算法思想"></a>1、算法思想</h3><p>通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p><h3 id="2、实现原理"><a href="#2、实现原理" class="headerlink" title="2、实现原理"></a>2、实现原理</h3><ul><li>设置两个变量 low、high，排序开始时：low=0，high=size-1。</li><li>默认数组的第一个数为基准数据，赋值给key，即key=array[low]。<a id="more"></a></li><li>因为默认数组的第一个数为基准，所以从后面开始向前搜索（high–），找到第一个小于key的array[high]，就将 array[high] 赋给 array[low]，即 array[low] = array[high]。（循环条件是 array[high] &gt;= key；结束时 array[high] &lt; key）</li><li>此时从前面开始向后搜索（low++），找到第一个大于key的array[low]，就将 array[low] 赋给 array[high]，即 array[high] = array[low]。（循环条件是 array[low] &lt;= key；结束时 array[low] &gt; key）</li><li>循环步骤，直到 low=high，该位置就是基准位置，把基准数据赋给当前位置。</li><li>第一趟找到的基准位置，作为下一趟的分界点。递归调用分界点前和分界点后的子数组排序，最终就会得到排序好的数组。<h3 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> i = low;</span><br><span class="line"><span class="keyword">int</span> j = high;</span><br><span class="line"><span class="keyword">int</span> key = <span class="built_in">array</span>[i];</span><br><span class="line"><span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line"><span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line"><span class="keyword">while</span> (i &lt; j &amp;&amp; <span class="built_in">array</span>[j] &gt;= key) &#123;</span><br><span class="line">j--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line"><span class="built_in">array</span>[i] = <span class="built_in">array</span>[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (i &lt; j &amp;&amp; <span class="built_in">array</span>[i] &lt;= key) &#123;</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line"><span class="built_in">array</span>[j] = <span class="built_in">array</span>[i];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">array</span>[i] = key;</span><br><span class="line"><span class="keyword">int</span> standard = i;</span><br><span class="line">QuickSort(<span class="built_in">array</span>, low, standard - <span class="number">1</span>);</span><br><span class="line">QuickSort(<span class="built_in">array</span>, standard + <span class="number">1</span>, high);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="4、算法分析"><a href="#4、算法分析" class="headerlink" title="4、算法分析"></a>4、算法分析</h3>时间复杂度：<br>1.最好：O(n log2 n)<br>2.最坏：O(n^2)<br>3.平均：O(n log2 n)<br>空间复杂度：O(n log2 n)<br>稳定性：不稳定</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1、算法思想&quot;&gt;&lt;a href=&quot;#1、算法思想&quot; class=&quot;headerlink&quot; title=&quot;1、算法思想&quot;&gt;&lt;/a&gt;1、算法思想&lt;/h3&gt;&lt;p&gt;通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。&lt;/p&gt;
-&lt;h3 id=&quot;2、实现原理&quot;&gt;&lt;a href=&quot;#2、实现原理&quot; class=&quot;headerlink&quot; title=&quot;2、实现原理&quot;&gt;&lt;/a&gt;2、实现原理&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;设置两个变量 low、high，排序开始时：low=0，high=size-1。&lt;/li&gt;
-&lt;li&gt;默认数组的第一个数为基准数据，赋值给key，即key=array[low]。
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="C" scheme="http://yoursite.com/tags/C/"/>
     
   </entry>
   
