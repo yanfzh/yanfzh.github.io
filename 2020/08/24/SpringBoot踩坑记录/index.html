@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>SpringBoot踩坑记录 | Yanfzh&#39;s  Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="记录一下最近在做的第一个springboot项目所遇到的若干问题 1. 日期格式前端在员工添加时，日期格式的转化  解决方法: 在application.properties文件中添加">
+<meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot踩坑记录">
 <meta property="og:url" content="http://yoursite.com/2020/08/24/SpringBoot%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Yanfzh&#39;s  Blog">
+<meta property="og:description" content="记录一下最近在做的第一个springboot项目所遇到的若干问题 1. 日期格式前端在员工添加时，日期格式的转化  解决方法: 在application.properties文件中添加">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-24T12:56:54.000Z">
-<meta property="article:modified_time" content="2020-08-24T12:56:54.933Z">
+<meta property="article:modified_time" content="2020-08-24T14:08:43.658Z">
 <meta property="article:author" content="Yanfzh">
+<meta property="article:tag" content="Spring Boot">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yanfzh&#39;s  Blog" type="application/atom+xml">
@@ -190,7 +193,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">0字</span>
+        <span class="post-count">699字</span>
       </span>
     </span>
 
@@ -199,7 +202,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长 ≈ </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">2分</span>
       </span>
     </span>
 </div>
@@ -212,7 +215,50 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>记录一下最近在做的第一个springboot项目所遇到的若干问题</p>
+<h3 id="1-日期格式"><a href="#1-日期格式" class="headerlink" title="1. 日期格式"></a>1. 日期格式</h3><p>前端在员工添加时，日期格式的转化</p>
+<ul>
+<li>解决方法: 在application.properties文件中添加<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#员工添加日期格式</span><br><span class="line">spring.mvc.date-format=yyyy-MM-dd</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-删除请求不成功"><a href="#2-删除请求不成功" class="headerlink" title="2. 删除请求不成功"></a>2. 删除请求不成功</h3><p>控制台报错： Request mothod ‘Post’ not supported</p>
+<ul>
+<li>原因<br>  springboot 2.0 版本的 <code>hiddenmethod</code>默认关闭</li>
+<li>解决方法：在application.properties文件中添加<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#以下默认为false时,删除请求post不能成功</span><br><span class="line">spring.mvc.hiddenmethod.filter.enabled=<span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-配置druid时出错"><a href="#3-配置druid时出错" class="headerlink" title="3. 配置druid时出错"></a>3. 配置druid时出错</h3><p>启动时报错：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line">Description:</span><br><span class="line">Failed to bind properties under <span class="string">'spring.datasource'</span> to javax.sql.DataSource:</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决</li>
+</ul>
+<ol>
+<li>引入log4j依赖<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- druid的datesources所需 https:<span class="comment">//mvnrepository.com/artifact/log4j/log4j --&gt;</span></span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;1.2.17&lt;/version&gt;</span><br><span class="line">       &lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
+<li>配置log4j.properties文件<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">log4j.rootLogger=DEBUG, stdout</span><br><span class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern=%<span class="number">5</span>p [%t] - %m%n</span><br></pre></td></tr></table></figure></li>
+<li>application.yml文件也要配置<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filters: stat,wall,log4j</span><br><span class="line">    maxPoolPreparedStatementPerConnectionSize: <span class="number">20</span></span><br><span class="line">    useGlobalDataSourceStat: <span class="keyword">true</span></span><br><span class="line">    connectionProperties: druid.stat.mergeSql=<span class="keyword">true</span>;druid.stat.slowSqlMillis=<span class="number">500</span></span><br></pre></td></tr></table></figure>
+tip： yml的语法格式要特别注意，比如冒号后需有空格，不然报错真的会找崩溃，别问我怎么知道的。。。</li>
+</ol>
+<h3 id="4-注解导致的问题"><a href="#4-注解导致的问题" class="headerlink" title="4. 注解导致的问题"></a>4. 注解导致的问题</h3><h4 id="4-1-Control层返回的不是页面，是return里的内容"><a href="#4-1-Control层返回的不是页面，是return里的内容" class="headerlink" title="4.1 Control层返回的不是页面，是return里的内容"></a>4.1 Control层返回的不是页面，是return里的内容</h4><ul>
+<li>原因：<br>  原本图方便使用的是注解<code>@RestController</code>,而 @RestController = @ResponseBody + @Controller,@ResponseBody作用就是让Controller方法中返回Return里的内容</li>
+<li>解决：<br>  直接把@RestController换成@Controller即可</li>
+</ul>
+<h4 id="4-2-完成添加页面时不能进行Post-Get请求"><a href="#4-2-完成添加页面时不能进行Post-Get请求" class="headerlink" title="4.2 完成添加页面时不能进行Post/Get请求"></a>4.2 完成添加页面时不能进行Post/Get请求</h4><ul>
+<li>解决： 不用 @PostMapping/@GetMapping 注解，用 @RequestMapping</li>
+</ul>
+<p>@GetMapping用于将HTTP get请求映射到特定处理程序的方法注解<br>具体来说，@GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。<br>@PostMapping用于将HTTP post请求映射到特定处理程序的方法注解<br>具体来说，@PostMapping是一个组合注解，是@RequestMapping(method = RequestMethod.POST)的缩写。</p>
+<p>因为我前端是添加员工和修改员工是同一个页面，用到了Post和Put方法，所以导致此错误</p>
+<h4 id="4-3-Mapper页面-Select注解运行时报错"><a href="#4-3-Mapper页面-Select注解运行时报错" class="headerlink" title="4.3 Mapper页面@Select注解运行时报错"></a>4.3 Mapper页面@Select注解运行时报错</h4><ul>
+<li>解决：<ol>
+<li>找出对应注解所绑定的方法，修改方法名。因为该注解不能被重载，但是我没有重载，但重新换一个方法名也可以，可能是没有刷新缓存的缘故吧。</li>
+<li>若是方法名返回是int类型也会报错，原因Mabatis里注解版返回类型是int的话int是不能为空的，但Integer是可以的，在执行如删除这种无返回值操作时要用Integer，当然，为避免此类麻烦，可以不用int，全部用Integer代替</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h3><p>一大半问题出在sprigboot的注解用法上，看来还是多多熟悉使用啊。</p>
+
       
 
       
@@ -220,7 +266,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -314,7 +382,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录不存在
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-日期格式"><span class="toc-number">1.</span> <span class="toc-text">1. 日期格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-删除请求不成功"><span class="toc-number">2.</span> <span class="toc-text">2. 删除请求不成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-配置druid时出错"><span class="toc-number">3.</span> <span class="toc-text">3. 配置druid时出错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-注解导致的问题"><span class="toc-number">4.</span> <span class="toc-text">4. 注解导致的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Control层返回的不是页面，是return里的内容"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 Control层返回的不是页面，是return里的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-完成添加页面时不能进行Post-Get请求"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 完成添加页面时不能进行Post&#x2F;Get请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Mapper页面-Select注解运行时报错"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 Mapper页面@Select注解运行时报错</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-总结"><span class="toc-number">5.</span> <span class="toc-text">5. 总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -427,15 +495,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,7 +507,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MySQL连接</a>
+                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,6 +527,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MySQL连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">结构型模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
@@ -471,7 +543,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">结构型模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,10 +556,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
